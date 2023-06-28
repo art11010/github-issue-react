@@ -1,6 +1,7 @@
 import styles from './App.module.css';
-import Button from './components/Button';
 import Header from './Header';
+import ListContainer from './components/ListContainer';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -8,18 +9,8 @@ function App() {
       <div className={styles.nav}>Nav</div>
 
       <Header />
-      <div className={styles.listContainer}>
-        <Button
-          style={{
-            fontSize: '1.4rem',
-            backgroundColor: 'green',
-            color: 'white',
-          }}
-        >
-          New lssue
-        </Button>
-      </div>
-      <div className={styles.footer}>footer</div>
+      <ListContainer />
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,8 @@
+.textFilter {
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.selected {
+  font-weight: 800;
+}

@@ -1,0 +1,89 @@
+.listContainer {
+  padding: 0 3.2rem;
+  margin-top: 2.4rem;
+  height: 22rem;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.input {
+  background-color: #f6f8fa;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #d0d7de;
+  padding-left: 1rem;
+  color: #57606a;
+  width: 60%;
+  margin-right: auto;
+  box-shadow: none;
+}
+
+.input:focus {
+  background: #ffffff;
+}
+
+/* .container {
+  margin-top: 2rem;
+} */
+
+.listFilter {
+  border: 0.1rem solid #d0d7de;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom: none;
+  background: rgb(246, 248, 250);
+  padding: 1.6rem;
+}
+
+.wrapperCustom:hover {
+  background: rgb(246, 248, 250);
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+}
+/*  */
+
+.filterLists {
+  display: flex;
+  align-items: center;
+}
+
+.filterLists > span {
+  padding: 0 1.6rem;
+  line-height: 2.1rem;
+  cursor: pointer;
+  color: #57606a;
+}
+
+.filterLists > span:hover {
+  color: #000000;
+}
+
+.filterItem {
+  position: relative;
+}
+
+.modalContainer {
+  top: 2rem;
+  left: 2rem;
+  position: absolute;
+}
+
+/*  */
+.textFilter {
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.selected {
+  font-weight: 800;
+}

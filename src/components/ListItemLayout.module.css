@@ -1,0 +1,22 @@
+.wrapper {
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid #d0d7de;
+  border-bottom: none;
+  background: #ffffff;
+  display: flex;
+}
+
+.wrapper:last-child {
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+  border-bottom: 0.1rem solid #d0d7de;
+}
+
+.checkbox {
+  margin-right: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.wrapper:hover {
+  background: rgb(246, 248, 250);
+}

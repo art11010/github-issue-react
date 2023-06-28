@@ -10,15 +10,3 @@
   color: rgba(255, 255, 255, 0.7);
   align-items: center;
 }
-
-.listContainer {
-  padding: 0 3.2rem;
-  margin-top: 2.4rem;
-  height: 22rem;
-}
-
-.footer {
-  margin: 4rem;
-  padding: 4rem 1.6rem 0.8rem;
-  border-top: 1px solid #d0d7de;
-}

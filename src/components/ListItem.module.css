@@ -1,0 +1,16 @@
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #0969da;
+}
+
+.description {
+  color: rgb(87, 96, 106);
+  font-size: 1.2rem;
+}
