@@ -57,14 +57,14 @@
   align-items: center;
 }
 
-.filterLists > span {
+.filterLists > div > span {
   padding: 0 1.6rem;
   line-height: 2.1rem;
   cursor: pointer;
   color: #57606a;
 }
 
-.filterLists > span:hover {
+.filterLists > div > span:hover {
   color: #000000;
 }
 

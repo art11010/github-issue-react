@@ -1,0 +1,63 @@
+.modal {
+  width: 30rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #d0d7de;
+  box-shadow: 0 0.8rem 2.4rem rgba(140, 149, 159, 0.2);
+  position: absolute;
+  z-index: 99;
+  background: #fff;
+  display: none;
+}
+
+.opened {
+  display: block;
+}
+
+.header {
+  padding: 0.7rem 0.7rem 0.7rem 1.6rem;
+  border-bottom: 0.1rem solid #d0d7de;
+  display: flex;
+  align-items: center;
+}
+
+.header > span {
+  flex: 1;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.header > button {
+  border: none;
+  background: transparent;
+}
+
+.input {
+  padding: 0.8rem;
+}
+
+.input > input {
+  box-shadow: none;
+  border: 0.1rem solid #d0d7de;
+  border-radius: 0.6rem;
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  line-height: 2rem;
+}
+
+.item {
+  padding: 0.7rem 1.6rem;
+  border-bottom: 0.1rem solid #d0d7de;
+  line-height: 1.25;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.list {
+  overflow: auto;
+  max-height: 40rem;
+}
