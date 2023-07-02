@@ -1,13 +1,30 @@
 .header {
   padding: 1.6rem 3.2rem 0;
   background: rgb(246, 248, 250);
-  box-shadow: inset 0 -1px 0 hsla(210, 18%, 87%, 1);
+  box-shadow: inset 0 -0.1rem 0 hsla(210, 18%, 87%, 1);
 }
+
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.name {
+  font-size: 2rem;
+  color: #0969da;
+}
+
+.bold {
+  font-weight: 800;
+}
+
 .buttonContainer {
   display: flex;
-  margin-bottom: 2rem;
-  justify-content: flex-start;
+  align-items: center;
 }
+
 .circle {
   width: 2rem;
   height: 2rem;

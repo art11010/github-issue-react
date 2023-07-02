@@ -2,6 +2,15 @@ import { useState } from 'react';
 import styles from './Tabs.module.css';
 import cx from 'clsx';
 
+// const TabList = [
+//   { name: 'Code', pathname: '/code' },
+//   { name: 'Issues', pathname: '/issue' },
+//   { name: 'Pull Request', pathname: '/pulls' },
+//   { name: 'Actions', pathname: '/actions' },
+//   { name: 'Projects', pathname: '/projects' },
+//   { name: 'Security', pathname: '/security' },
+// ];
+
 const tabList = ['Code', 'Issues', 'Pull Requests'];
 export default function Tabs() {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);

@@ -1,7 +1,19 @@
 .button {
   display: flex;
-  align-items: center;
   padding: 0.5rem 1.6rem;
   border-radius: 0.6rem;
-  border: 1px solid rgba(27, 31, 36, 0.15);
+  border: 0.1rem solid rgba(27, 31, 36, 0.15);
+  align-items: center;
+}
+
+.header {
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: black;
+}
+
+.green {
+  font-size: 1.4rem;
+  background-color: green;
+  color: white;
 }

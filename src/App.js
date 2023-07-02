@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import Header from './Header';
+import Header from './components/Header';
 import ListContainer from './components/ListContainer';
 import Footer from './components/Footer';
 

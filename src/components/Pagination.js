@@ -9,9 +9,7 @@ export default function Pagination({
   return (
     <div>
       <button
-        className={cx(styles.button, styles.blueButton, {
-          [styles.disabled]: currentPage === 1,
-        })}
+        className={cx(styles.button, styles.blueButton)}
         disabled={currentPage === 1}
       >
         {'< Previous'}
@@ -25,9 +23,7 @@ export default function Pagination({
         />
       ))}
       <button
-        className={cx(styles.button, styles.blueButton, {
-          [styles.disabled]: currentPage === maxPage,
-        })}
+        className={cx(styles.button, styles.blueButton)}
         disabled={currentPage === maxPage}
       >
         {'Next >'}
