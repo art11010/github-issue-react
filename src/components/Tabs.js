@@ -2,25 +2,23 @@ import { useState } from 'react';
 import styles from './Tabs.module.css';
 import cx from 'clsx';
 
-// const TabList = [
-//   { name: 'Code', pathname: '/code' },
-//   { name: 'Issues', pathname: '/issue' },
-//   { name: 'Pull Request', pathname: '/pulls' },
-//   { name: 'Actions', pathname: '/actions' },
-//   { name: 'Projects', pathname: '/projects' },
-//   { name: 'Security', pathname: '/security' },
-// ];
+const TabList = [
+  { name: 'Code', pathname: '/code' },
+  { name: 'Issues', pathname: '/issue' },
+  { name: 'Pull Request', pathname: '/pulls' },
+  { name: 'Actions', pathname: '/actions' },
+  { name: 'Projects', pathname: '/projects' },
+  { name: 'Security', pathname: '/security' },
+];
 
-const tabList = ['Code', 'Issues', 'Pull Requests'];
 export default function Tabs() {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   return (
     <ul className={styles.tabList}>
-      {tabList.map((tab, idx) => (
+      {TabList.map((tab, idx) => (
         <Tab
-          key={idx}
-          title={tab}
-          number="0"
+          key={tab.name}
+          title={tab.name}
           selected={selectedTabIndex === idx}
           onClick={() => setSelectedTabIndex(idx)}
         />

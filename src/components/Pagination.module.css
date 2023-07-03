@@ -5,10 +5,11 @@
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
+  border: 0.1rem solid transparent;
 }
 
 .button:hover {
-  border: 0.1rem solid #d0d7de;
+  border-color: #d0d7de;
 }
 
 .button:disabled {
@@ -29,6 +30,7 @@
 .selected {
   background: #0969da;
   color: #ffffff;
+  border: none;
 }
 .blueButton {
   color: #0969da;
