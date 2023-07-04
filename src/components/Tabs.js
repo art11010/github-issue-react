@@ -12,7 +12,7 @@ const TabList = [
 ];
 
 export default function Tabs() {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [selectedTabIndex, setSelectedTabIndex] = useState(1);
   return (
     <ul className={styles.tabList}>
       {TabList.map((tab, idx) => (

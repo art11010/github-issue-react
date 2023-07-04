@@ -1,6 +1,4 @@
-import styles from './ListContainer.module.css';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import ListItemLayout from './components/ListItemLayout';
 import ListItem from './components/ListItem';
@@ -8,6 +6,10 @@ import ListFilter from './components/ListFilter';
 import OpenClosedFilters from './components/OpenClosedFilters';
 import Button from './components/Button';
 import Pagination from './components/Pagination';
+import { GITHUB_API } from './api/api';
+
+import axios from 'axios';
+import styles from './ListContainer.module.css';
 
 export default function ListContainer() {
   const [inputValue, setInputValue] = useState('is:pr is:open');
@@ -15,21 +17,21 @@ export default function ListContainer() {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [isOpenMode, setIsOpenMode] = useState(true);
+  const [params, setParams] = useState();
   const maxPage = 10;
 
   async function getData(params) {
     const { data } = await axios.get(
-      `https://api.github.com/repos/facebook/react/issues`,
+      `${GITHUB_API}/repos/facebook/react/issues`,
       {
         params,
       },
     );
     setList(data);
-    console.log(data);
   }
   useEffect(() => {
-    getData({ page, state: isOpenMode ? 'open' : 'closed' });
-  }, [page, isOpenMode]);
+    getData({ page, state: isOpenMode ? 'open' : 'closed', ...params });
+  }, [page, isOpenMode, params]);
 
   // const MAX_PAGE = getData().totalCount
   return (
@@ -51,10 +53,10 @@ export default function ListContainer() {
         <div className={styles.container}>
           <ListItemLayout className={styles.listFilter}>
             <ListFilter
-              onChangeFilter={(filteredDate) => {
+              onChangeFilter={(params) => {
                 // 필터링 된 요소에 맞게 데이터 불러오기
                 // const data = getData();
-                // setList(data)
+                setParams(params);
               }}
             />
           </ListItemLayout>
