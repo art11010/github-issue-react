@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  margin-top: 2.4rem;
+  padding: 0 3.2rem;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: firebrick;
+  margin-right: 1rem;
+}
+
+.border {
+  border: 0.1rem solid #d0d7de;
+  border-radius: 0.6rem;
+}
+
+.inputWrapper {
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+}

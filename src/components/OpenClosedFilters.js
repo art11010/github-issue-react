@@ -3,18 +3,18 @@ import React from 'react';
 
 import styles from './OpenClosedFilters.module.css';
 
-export default function OpenClosedFilters({ isOpenMode, onClickMode }) {
+export default function OpenClosedFilters({ isOpenState, onClickState }) {
   return (
     <>
       <OpenClosedFilter
         state="Open"
-        selected={isOpenMode}
-        onClick={() => onClickMode(true)}
+        selected={isOpenState}
+        onClick={() => onClickState('open')}
       />
       <OpenClosedFilter
         state="Closed"
-        selected={!isOpenMode}
-        onClick={() => onClickMode(false)}
+        selected={!isOpenState}
+        onClick={() => onClickState('closed')}
       />
     </>
   );

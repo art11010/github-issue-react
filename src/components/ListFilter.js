@@ -29,7 +29,6 @@ export default function ListFilter({ onChangeFilter }) {
         result = data;
     }
 
-    console.log(result);
     // 가공된 데이터 name, title, login -> name
     setList(result);
   }
