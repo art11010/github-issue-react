@@ -8,8 +8,9 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: firebrick;
+  background: plum;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .border {
@@ -23,6 +24,7 @@
 }
 
 .buttonWrapper {
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
 }

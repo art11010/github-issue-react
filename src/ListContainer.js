@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 
 import ListItemLayout from './components/ListItemLayout';
 import ListItem from './components/ListItem';
@@ -49,7 +49,9 @@ export default function ListContainer() {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <Button green>New lssue</Button>
+          <Link to="/new" className={styles.link}>
+            <Button green>New lssue</Button>
+          </Link>
         </div>
         <OpenClosedFilters
           isOpenState={state !== 'closed'}

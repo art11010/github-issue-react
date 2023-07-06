@@ -4,6 +4,7 @@
   border-radius: 0.6rem;
   border: 0.1rem solid rgba(27, 31, 36, 0.15);
   align-items: center;
+  cursor: pointer;
 }
 
 .header {
