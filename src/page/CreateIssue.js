@@ -3,34 +3,47 @@ import cx from 'clsx';
 import styles from './CreateIssue.module.css';
 import { useRef } from 'react';
 import TextField from '../components/TextField';
+import { useForm } from '../hooks/hooks';
 
 export default function CreateIssue() {
-  const ref = useRef();
-  console.log({ ref });
+  // console.log({ ref });
+  const inputRef = useRef();
+  const textareaRef = useRef();
+  // const refs = { title: inputRef, body: textareaRef };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-    if (e.target.elements.title.value === '') {
-      alert('타이틀을 입력해주세요.');
-      return;
-    }
-    ref.current.focus();
-  };
+  const { inputValues, onChange, isSubmitting, errors, handleSubmit } = useForm(
+    {
+      initialValues: { title: '', body: '' },
+      validate,
+      onSubmit: () => console.log('야야'),
+      refs: { title: inputRef, body: textareaRef },
+    },
+  );
 
   return (
     <div className={styles.container}>
       <div className={styles.avatar}></div>
       <div className={cx(styles.inputWrapper, styles.border)}>
         <form onSubmit={handleSubmit}>
-          <TextField name="title" placeholder="Title" />
           <TextField
+            ref={inputRef}
+            name="title"
+            placeholder="Title"
+            value={inputValues.title}
+            onChange={onChange}
+            error={errors.title}
+          />
+          <TextField
+            ref={textareaRef}
             type="textarea"
             name="body"
             placeholder="Leave a comment"
+            value={inputValues.body}
+            onChange={onChange}
+            error={errors.body}
           />
           <div className={styles.buttonWrapper}>
-            <Button type="submit" green>
+            <Button type="submit" green disabled={isSubmitting}>
               Submit new issue
             </Button>
           </div>
@@ -38,4 +51,12 @@ export default function CreateIssue() {
       </div>
     </div>
   );
+}
+
+function validate(values) {
+  let errors = {};
+  if (values.title === '') {
+    errors = { title: '타이틀은 필수값입니다.' };
+  }
+  return errors;
 }

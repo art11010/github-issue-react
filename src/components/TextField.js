@@ -4,21 +4,28 @@ import styles from './TextField.module.css';
 import { forwardRef } from 'react';
 
 export default forwardRef(function TextField(
-  { type = 'input', name, placeholder },
+  { type = 'input', name, placeholder, value, onChange, error },
   ref,
 ) {
   return type === 'input' ? (
     <input
       name={name}
-      type="text"
-      className={cx(styles.input, styles.border)}
+      ref={ref}
+      className={cx(styles.input, styles.border, { [styles.error]: error })}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     />
   ) : (
     <textarea
       name={name}
-      className={cx(styles.input, styles.textarea, styles.border)}
+      ref={ref}
+      className={cx(styles.input, styles.textarea, styles.border, {
+        [styles.error]: error,
+      })}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     ></textarea>
   );
 });
