@@ -1,6 +1,6 @@
 import cx from 'clsx';
 import styles from './Modal.module.css';
-import { useEffect, useState } from 'react';
+import { useFilteredData } from '../hooks/hooks';
 
 export default function Modal({
   opened,
@@ -10,23 +10,8 @@ export default function Modal({
   searchDataList,
   onClickCell,
 }) {
-  const [filteredData, setFilteredData] = useState(searchDataList);
-  const [searchValue, setSearchValue] = useState('');
-
-  useEffect(() => {
-    setFilteredData(searchDataList);
-  }, [searchDataList]);
-
-  useEffect(() => {
-    if (searchValue === '') {
-      setFilteredData(searchDataList);
-    } else {
-      const filteredSearchList = searchDataList.filter((item) =>
-        item.name.toLowerCase().includes(searchValue.toLowerCase()),
-      );
-      setFilteredData(filteredSearchList);
-    }
-  }, [searchDataList, searchValue]);
+  const { filteredData, searchValue, setSearchValue } =
+    useFilteredData(searchDataList);
 
   return (
     <div className={cx(styles.modal, { [styles.opened]: opened })}>

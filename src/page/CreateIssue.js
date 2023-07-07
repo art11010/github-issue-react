@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Button from '../components/Button';
 import TextField from '../components/TextField';
-import { useForm } from '../hooks/hooks';
+import { useForm, useUser } from '../hooks/hooks';
 import { GITHUB_API } from '../api/api';
 
 import cx from 'clsx';
@@ -16,6 +16,9 @@ export default function CreateIssue() {
   const textareaRef = useRef();
   // const refs = { title: inputRef, body: textareaRef };
   const navigate = useNavigate();
+
+  const user = useUser();
+  console.log(user);
 
   const { inputValues, onChange, isSubmitting, errors, handleSubmit } = useForm(
     {
