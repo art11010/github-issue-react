@@ -1,22 +1,42 @@
-import Button from '../components/Button';
-import cx from 'clsx';
-import styles from './CreateIssue.module.css';
 import { useRef } from 'react';
+import axios from 'axios';
+
+import Button from '../components/Button';
 import TextField from '../components/TextField';
 import { useForm } from '../hooks/hooks';
+import { GITHUB_API } from '../api/api';
+
+import cx from 'clsx';
+import styles from './CreateIssue.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateIssue() {
   // console.log({ ref });
   const inputRef = useRef();
   const textareaRef = useRef();
   // const refs = { title: inputRef, body: textareaRef };
+  const navigate = useNavigate();
 
   const { inputValues, onChange, isSubmitting, errors, handleSubmit } = useForm(
     {
       initialValues: { title: '', body: '' },
       validate,
-      onSubmit: () => console.log('야야'),
+      onSubmit: async () =>
+        await axios.post(
+          `${GITHUB_API}/repos/art11010/github-issue-react/issues`,
+          { title: 'Example' },
+          {
+            headers: {
+              Authorization: process.env.REACT_APP_GITHUB_TOKEN,
+              'Content-Type': 'application/json',
+            },
+          },
+        ),
       refs: { title: inputRef, body: textareaRef },
+      onSuccess: (result) => {
+        console.log({ result });
+        navigate('/', { replace: true });
+      },
     },
   );
 

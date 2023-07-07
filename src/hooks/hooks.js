@@ -6,7 +6,7 @@ export function useForm({
   refs,
   onSuccess, // 성공했을 때
   onErrors, // 에러났을때
-  onSubmit, // 값이 전달 됐을 때 함수 호출
+  onSubmit, // 값이 전달 됐을 때 함수 or 네트워크 호출
 }) {
   const [inputValues, setInputValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
@@ -17,7 +17,7 @@ export function useForm({
     setInputValues({ ...inputValues, [name]: value });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setIsSubmitting(true);
     const vaildateResulte = validate(inputValues);
@@ -33,7 +33,14 @@ export function useForm({
       setIsSubmitting(false);
       return;
     } else {
-      onSubmit();
+      try {
+        const result = await onSubmit();
+        onSuccess(result);
+      } catch (e) {
+        console.log({ e });
+        onErrors();
+      }
+
       return;
     }
   }
