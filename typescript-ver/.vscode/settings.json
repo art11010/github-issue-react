@@ -1,0 +1,24 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Format 기준
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // Save 시 eslint 자동수행
+  },
+
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+  ]
+
+  // "editor.formatOnSave": true // Save 시 Format
+
+  // "[css]": {
+  //     "editor.formatOnSave": true    // Save 시 Format
+  // },
+  // "[javascript]": {
+  //     "editor.formatOnSave": true    // Save 시 Format
+  // },
+  // "[javascriptreact]": {
+  //     "editor.formatOnSave": true    // Save 시 Format
+  // },
+}

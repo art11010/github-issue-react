@@ -1,0 +1,9 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "singleQuote": true,
+
+  "_trailingComma": "마지막 항목 콤마 여부",
+  "_tabWidth": "들여쓰기 사이즈",
+  "_singleQuote": "작은 따옴표"
+}
