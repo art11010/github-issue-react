@@ -2,4 +2,4 @@
 
 React, Axios, PostCSS, react-router, 라이브러리 사용 (clsx, dayjs), context API, React-Query
 
-JavaScript로 구현 후 TypeScript로 변환
+JavaScript로 구현 후 TypeScript로 마이그레이션
