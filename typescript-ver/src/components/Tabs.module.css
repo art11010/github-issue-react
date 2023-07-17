@@ -1,0 +1,31 @@
+.tabList {
+  display: flex;
+}
+
+.tab {
+  display: flex;
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.selected {
+  border-bottom: #fa4549 0.2rem solid;
+  font-weight: 800;
+}
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(27, 31, 36, 0.08);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 0.3rem;
+}
