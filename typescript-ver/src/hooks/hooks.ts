@@ -35,13 +35,13 @@ export function useForm ({
   async function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setIsSubmitting(true)
-    const vaildateResulte = validate(inputValues)
-    setErrors(vaildateResulte)
+    const validateResulte = validate(inputValues)
+    setErrors(validateResulte)
 
-    const errorKeys = Object.keys(vaildateResulte)
+    const errorKeys = Object.keys(validateResulte)
     if (errorKeys.length !== 0) {
       const key = errorKeys[0]
-      alert(vaildateResulte[key])
+      alert(validateResulte[key])
       // onErrors();
       refs[key].current.focus()
 
@@ -51,7 +51,7 @@ export function useForm ({
         const result = await onSubmit()
         onSuccess(result)
       } catch (e) {
-        console.log({ e })
+        // console.log({ e })
         onErrors()
       }
     }

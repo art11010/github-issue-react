@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { GITHUB_API } from '../api/api';
 import { useQuery } from 'react-query';
+import { GITHUB_API } from '../api/api';
+import axios from 'axios';
 
 // useForm
 export function useForm({
@@ -23,17 +23,18 @@ export function useForm({
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsSubmitting(true);
-    const vaildateResulte = validate(inputValues);
-    setErrors(vaildateResulte);
 
-    const errorKeys = Object.keys(vaildateResulte);
+    setIsSubmitting(true);
+    const validateResulte = validate(inputValues);
+    setErrors(validateResulte);
+
+    const errorKeys = Object.keys(validateResulte);
+
     if (errorKeys.length !== 0) {
       const key = errorKeys[0];
-      alert(vaildateResulte[key]);
+      alert(validateResulte[key]);
       // onErrors();
       refs[key].current.focus();
-
       setIsSubmitting(false);
       return;
     } else {
@@ -70,7 +71,7 @@ async function getUserInfo() {
   return data;
 }
 export function useUser() {
-  // 1. user 정보는 매본 바뀌지 않음
+  // 1. user 정보는 매번 바뀌지 않음
   // 2. 그럼에도, useUser를 호출 할 때마다 네트워크 통신이 발생한다
   // => 캐싱(임시적으로 데이터 저장) 필요, react query를 사용하는 이유
   // useQuery(queryKey, queryFn)
