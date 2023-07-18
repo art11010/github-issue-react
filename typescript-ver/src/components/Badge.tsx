@@ -1,6 +1,6 @@
 import styles from './Badge.module.css'
 
-interface BadgeProps {
+export interface BadgeProps {
   color: string
   name: string
 }

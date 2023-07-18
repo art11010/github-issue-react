@@ -3,27 +3,18 @@ import ListItemLayout from './ListItemLayout'
 import Badge from './Badge'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { type ListItemType } from '../models/issues'
 
 interface ListItemProps {
   checked: boolean
-  onChangeCheckbox: (checked: boolean) => void
-  onClickTitle: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
-  data: {
-    title: string
-    labels: Array<{
-      color: string
-      name: string
-    }>
-    state: string
-    created_at: string
-    closed_at: string
-    number: number
-  }
+  onClickCheckBox: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onClickTitle?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  data: ListItemType
 }
 
 export default function ListItem ({
   checked,
-  onChangeCheckbox,
+  onClickCheckBox,
   onClickTitle,
   data
 }: ListItemProps) {
@@ -34,8 +25,7 @@ export default function ListItem ({
   const date = data.state === 'open' ? data.created_at : data.closed_at
 
   return (
-    // <ListItemLayout checked={checked} onClick={onChangeCheckbox}>
-    <ListItemLayout >
+    <ListItemLayout checked={checked} onClick={onClickCheckBox}>
       <div>
         <div role="button" onClick={onClickTitle} className={styles.title}>
           {data.title}

@@ -1,9 +1,9 @@
-// import { useEffect, useState } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useQuery } from 'react-query'
 
 import { GITHUB_API } from '../api/api'
+import { type List } from '../models/issues'
 
 // useForm
 interface useFormProps {
@@ -82,24 +82,24 @@ export function useUser () {
 }
 
 // useFilteredData
-// export function useFilteredData (searchDataList) {
-//   const [filteredData, setFilteredData] = useState(searchDataList)
-//   const [searchValue, setSearchValue] = useState('')
+export function useFilteredData (searchDataList: List[]) {
+  const [filteredData, setFilteredData] = useState(searchDataList)
+  const [searchValue, setSearchValue] = useState('')
 
-//   useEffect(() => {
-//     setFilteredData(searchDataList)
-//   }, [searchDataList])
+  useEffect(() => {
+    setFilteredData(searchDataList)
+  }, [searchDataList])
 
-//   useEffect(() => {
-//     if (searchValue === '') {
-//       setFilteredData(searchDataList)
-//     } else {
-//       const filteredSearchList = searchDataList.filter((item) =>
-//         item.name.toLowerCase().includes(searchValue.toLowerCase())
-//       )
-//       setFilteredData(filteredSearchList)
-//     }
-//   }, [searchDataList, searchValue])
+  useEffect(() => {
+    if (searchValue === '') {
+      setFilteredData(searchDataList)
+    } else {
+      const filteredSearchList = searchDataList.filter((item) =>
+        item.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
+      setFilteredData(filteredSearchList)
+    }
+  }, [searchDataList, searchValue])
 
-//   return { filteredData, searchValue, setSearchValue }
-// }
+  return { filteredData, searchValue, setSearchValue }
+}
