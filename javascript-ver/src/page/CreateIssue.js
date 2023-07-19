@@ -41,7 +41,8 @@ export default function CreateIssue() {
       onErrors: () => console.log('error'),
       onSuccess: (result) => {
         // console.log({ result });
-        navigate('https://github.com/art11010/github-issue-react/issues', { replace: true });
+        navigate('/', { replace: true });
+        window.open('https://github.com/art11010/github-issue-react/issues');
       },
     },
   );
